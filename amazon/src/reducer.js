@@ -1,5 +1,6 @@
 export const initialState={
   basket:[],
+  user:null,
 };
 //selector
 export const getBasketTotal=(basket)=>
@@ -34,7 +35,11 @@ switch(action.type){
         basket: newBasket
       }
       // return {...state, basket:state.basket.filter(item=>item.id!==action.id)}
-
+case 'SET_USER':
+  return {
+    ...state,
+    user:action.user
+  }
     default:
       return state;
 }
